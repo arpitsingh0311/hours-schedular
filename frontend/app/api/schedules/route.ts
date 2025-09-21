@@ -1,12 +1,11 @@
-// app/api/schedules/route.ts (Updated)
-import { createClient } from '@/lib/supabase/server'; // <-- Import the new server client
+import { createClient } from '@/lib/supabase/server'; 
 import { NextResponse } from 'next/server';
 import clientPromise from '@/lib/mongodb';
 
 export async function POST(request: Request) {
-  const supabase = createClient(); // <-- Use the new server client
+  const supabase = createClient(); 
 
-  const { data: { user } } = await supabase.auth.getUser(); // <-- Use getUser()
+  const { data: { user } } = await supabase.auth.getUser(); 
 
   if (!user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

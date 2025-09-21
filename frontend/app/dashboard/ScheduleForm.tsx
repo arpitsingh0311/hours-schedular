@@ -1,4 +1,3 @@
-// app/dashboard/ScheduleForm.tsx
 'use client';
 import { useRouter } from 'next/navigation';
 
@@ -17,7 +16,6 @@ export default function ScheduleForm() {
       body: JSON.stringify({ eventName, startTime }),
     });
 
-    // Refresh the page to show the new schedule
     router.refresh();
     (event.target as HTMLFormElement).reset();
   };

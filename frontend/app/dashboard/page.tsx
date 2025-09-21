@@ -1,13 +1,12 @@
-// app/dashboard/page.tsx (Updated)
-import { createClient } from '@/lib/supabase/server'; // <-- Import the new server client
+import { createClient } from '@/lib/supabase/server'; 
 import { redirect } from 'next/navigation';
 import clientPromise from '@/lib/mongodb';
 import ScheduleForm from './ScheduleForm';
 
 export default async function Dashboard() {
-  const supabase = createClient(); // <-- Use the new server client
+  const supabase = createClient(); 
 
-  const { data: { user } } = await supabase.auth.getUser(); // <-- Use getUser() instead of getSession()
+  const { data: { user } } = await supabase.auth.getUser();
 
   if (!user) {
     redirect('/login');
