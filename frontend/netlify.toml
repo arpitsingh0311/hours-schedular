@@ -3,8 +3,8 @@
 [build]
   command = "next build"
   base = "frontend"
-  publish = ".next" # Corrected path
+  publish = ".next"
 
 [functions]
-  [functions.cron-reminders]git
+  [functions.cron-reminders]  # "git" removed from this line
     schedule = "*/5 * * * *"
