@@ -1,14 +1,10 @@
 # netlify.toml
 
 [build]
-  # The command to build your Next.js site
   command = "next build"
-  # The folder where your Next.js project lives
   base = "frontend"
-  # The folder that the build command outputs to
-  publish = "frontend/.next"
+  publish = ".next" # Corrected path
 
-# This is for your scheduled cron job
 [functions]
-  [functions.cron-reminders]
+  [functions.cron-reminders]git
     schedule = "*/5 * * * *"
